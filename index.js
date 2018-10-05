@@ -2,38 +2,25 @@
 function handleSubmit(event) {
     var form = event.target;
     var elements = form.elements;
-    var guess = elements.guess.value;
-    
-    var answer = 7;
+    var toppings = elements.toppings;
 
-    var text = '';
-    var color = '';
+    // get selected value out of radio buttons
+    var grade = elements.grade;
+    console.log('grade', grade.value);
 
-    
-    if(guess == answer) {
-        text = 'Correct!';
-        color = 'correct';
-    }
-    else if(guess < answer - 3) {
-        text = 'super too low!';
-        color = 'super-low';
-    }
-    else if(guess < answer) {
-        text = 'too low!';
-        color = 'low';
-    }
-    else if(guess > answer + 3) {
-        text = 'super too high!';
-        color = 'super-high';
-    }
-    else {
-        text = 'too high!';
-        color = 'high';
+    // get selected valueS out of checkboxes
+    var selectedToppings = '';
+
+    for(var i = 0; i < toppings.length; i++) {
+        var topping = toppings[i];
+        if(topping.checked) {
+            selectedToppings = selectedToppings 
+                + ' ' + topping.value;
+        }
     }
 
-    var result = document.getElementById('result');
-    result.textContent = text;
-    result.className = color;
+    console.log(selectedToppings);
+
 }
 
 

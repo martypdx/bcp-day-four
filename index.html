@@ -11,14 +11,26 @@
 <body>
     <h1>Apps FTW!</h1>
 
-    <form onsubmit="return handleSubmit(event), false;">      
+    <form onsubmit="event.preventDefault(); handleSubmit(event);">      
         <p>
             <label>
-                How many animals do I have?
-                <input name="guess" type="number">
+                <input value="olives" name="toppings" type="checkbox"> Olives
+            </label>
+            <label>
+                <input value="pepperoni" name="toppings" type="checkbox"> Pepperoni
+            </label>
+            <label>
+                <input value="pineapple" name="toppings" type="checkbox"> Pineapple
             </label>
         </p>
-        <button>Guess</button>
+
+        <p>
+            <label><input value="A" name="grade" type="radio"> A</label>
+            <label><input value="B" name="grade" type="radio"> B</label>
+            <label><input value="C" name="grade" type="radio"> C</label>
+        </p>
+
+        <button>Order</button>
     </form>
 
     <p id="result">Make a guess!</p>
