@@ -11,40 +11,44 @@
 <body>
     <h1>Apps FTW!</h1>
 
-    <p>
-        <label>
-            Name:
-            <input name="name" type="text">
-        </label>
-    </p>
-    
-    <p>
-        <label>
-            Comments:
-            <textarea name="comments"></textarea>
-        </label>
-    </p>
-    
-    <p>
-        <label>
-            <input name="toppings" type="checkbox"> Olives
-        </label>
-        <label>
-            <input name="toppings" type="checkbox"> Pepperoni
-        </label>
-        <label>
-            <input name="toppings" type="checkbox"> Pineapple
-        </label>
-    </p>
-    
-    <p>
-        <label><input name="grade" type="radio"> A</label>
-        <label><input name="grade" type="radio"> B</label>
-        <label><input name="grade" type="radio"> C</label>
-    </p>
+    <form onsubmit="return handleSubmit(event), false;">      
+        <p>
+            <label>
+                Name:
+                <input name="name" type="text" value="Marty">
+            </label>
+        </p>
+        
+        <p>
+            <label>
+                Comments:
+                <textarea name="comments">
+                    I am a comment
+                </textarea>
+            </label>
+        </p>
+        
+        <p>
+            <label>
+                <input checked value="olives" name="toppings" type="checkbox"> Olives
+            </label>
+            <label>
+                <input checked value="pepperoni" name="toppings" type="checkbox"> Pepperoni
+            </label>
+            <label>
+                <input value="pineapple" name="toppings" type="checkbox"> Pineapple
+            </label>
+        </p>
+        
+        <p>
+            <label><input checked name="grade" type="radio"> A</label>
+            <label><input name="grade" type="radio"> B</label>
+            <label><input name="grade" type="radio"> C</label>
+        </p>
 
-    <button onclick="sayHello()">Click Me!</button>
+        <button>Submit</button>
 
+    </form>
 
     <script src="index.js"></script>
 </body>
